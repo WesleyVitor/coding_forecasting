@@ -44,6 +44,10 @@ matrix_big = {}
 for epoch in range(100, 700, 100):
   df_meli34 = df_meli34_original
   df_meli34 = df_meli34.drop(columns=['Open', 'High', 'Low', 'Volume', 'Dividends', 'Stock Splits'])
+  hs = open("hst.txt","a")
+  hs.write(f"\n{matrix_big}")
+  print(matrix_big)
+  hs.close()
   for janela in range(15, max_days+15, 15):
       qtd_features = janela
 

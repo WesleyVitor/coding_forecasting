@@ -43,7 +43,12 @@ matrix = {"janela":[], "rmse": []}
 matrix_big = {}
 for epoch in range(500, 700, 100):
   df_bpac3 = df_bpac3_original
+
   df_bpac3 = df_bpac3.drop(columns=['Open', 'High', 'Low', 'Volume', 'Dividends', 'Stock Splits'])
+  hs = open("hst.txt","a")
+  hs.write(f"\n{matrix_big}")
+  print(matrix_big)
+  hs.close()
   for janela in range(15, max_days+15, 15):
       qtd_features = janela
 
